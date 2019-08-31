@@ -28,8 +28,8 @@ public class CustomerController {
 	public static Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
 	@PostMapping("/register")
-	public ResponseEntity<UpdateStatus> registerCustomer(@RequestBody CustomerDetailsEntity customerDetails) {
-		Optional<Set<ConstraintViolation<CustomerDetailsEntity>>> registerReponse = customerService.registerCustomer(customerDetails);
+	public ResponseEntity<UpdateStatus> registerCustomer(@RequestBody CustomerDetails customerDetails) {
+		Optional<Set<ConstraintViolation<CustomerDetails>>> registerReponse = customerService.registerCustomer(customerDetails);
 		UpdateStatus status = new UpdateStatus();
 		status.setStatus("success");
 		ResponseEntity<UpdateStatus> responseEntity = new ResponseEntity<UpdateStatus> (status, HttpStatus.OK);
