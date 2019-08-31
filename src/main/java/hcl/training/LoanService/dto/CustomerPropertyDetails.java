@@ -6,6 +6,8 @@ public class CustomerPropertyDetails {
 
 	String propertyLocation;
 	
+	Double propertyValue;
+	
 	public String getPropertyLocation() {
 		return propertyLocation;
 	}

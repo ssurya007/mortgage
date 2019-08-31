@@ -40,8 +40,17 @@ public class CustomerDetails {
 	
 	 String propertyOwned;
 	 String propertyLocation;
+	 Double propertyValue;
 	  
-	 public LocalDate getDateOfBirth() {
+	 public Double getPropertyValue() {
+		return propertyValue;
+	}
+
+	public void setPropertyValue(Double propertyValue) {
+		this.propertyValue = propertyValue;
+	}
+
+	public LocalDate getDateOfBirth() {
 			return dateOfBirth;
 		}
 

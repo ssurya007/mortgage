@@ -22,6 +22,8 @@ public class CustomerPropertyDetailsEntity {
 	String propertyOwned;
 	@Column(name = "property_location")
 	String propertyLocation;
+	@Column(name = "property_value")
+	Double propertyValue;
 	
 	@OneToMany(mappedBy = "customerPropertyDetailsEntity", cascade=CascadeType.ALL)
 	Set<CustomerDetailsEntity> customerDetailsEntity;
@@ -43,6 +45,13 @@ public class CustomerPropertyDetailsEntity {
 	}
 	public void setPropertyOwned(String propertyOwned) {
 		this.propertyOwned = propertyOwned;
+	}
+
+	public Double getPropertyValue() {
+		return propertyValue;
+	}
+	public void setPropertyValue(Double propertyValue) {
+		this.propertyValue = propertyValue;
 	}
 
 }
