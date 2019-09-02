@@ -1,4 +1,4 @@
-package hcl.training.LoanService.model;
+package hcl.training.LoanService.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +17,7 @@ public class LoanOfferEntity {
     private Long id;
 	
 	@Column(name = "loan_offer_amt" )
-    private Long amount;
+    private Double amount;
 	
 	@Column(name = "loan_offer_tenure" )
     private Integer tenure;
@@ -28,6 +28,14 @@ public class LoanOfferEntity {
 	@Column(name = "loan_offer_roi" )
     private Double rateOfInterest;
 
+	public Double getRateOfInterest() {
+		return rateOfInterest;
+	}
+
+	public void setRateOfInterest(Double rateOfInterest) {
+		this.rateOfInterest = rateOfInterest;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -36,11 +44,11 @@ public class LoanOfferEntity {
 		this.id = id;
 	}
 
-	public Long getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Long amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 

@@ -1,4 +1,4 @@
-package hcl.training.LoanService.model;
+package hcl.training.LoanService.entity;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -36,6 +37,9 @@ import javax.validation.constraints.NotNull;
 		@Column(name = "monthly_income", nullable = false)
 		Double monthlyIncome;
 		
+		public Double getMonthlyIncome() {
+			return monthlyIncome;
+		}
 		public void setMonthlyIncome(Double monthlyIncome) {
 			this.monthlyIncome = monthlyIncome;
 		}
@@ -49,7 +53,7 @@ import javax.validation.constraints.NotNull;
 		@Column(name = "pancard_number", unique = true, nullable = false)
 		String panCardNumber;
 		
-		@ManyToOne(cascade=CascadeType.ALL)
+		@OneToOne(cascade=CascadeType.ALL)
 		@JoinColumn(name="property_id")
 		CustomerPropertyDetailsEntity customerPropertyDetailsEntity;
 		

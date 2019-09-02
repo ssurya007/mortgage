@@ -1,4 +1,4 @@
-package hcl.training.LoanService.model;
+package hcl.training.LoanService.entity;
 
 public class UpdateStatus {
 	String status;

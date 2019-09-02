@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import hcl.training.LoanService.dto.CustomerPropertyDetails;
-import hcl.training.LoanService.model.CustomerPropertyDetailsEntity;
+import hcl.training.LoanService.entity.CustomerPropertyDetailsEntity;
 
 @Repository
 public interface PropertyDAO extends JpaRepository<CustomerPropertyDetailsEntity, Long>{

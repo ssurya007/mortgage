@@ -1,4 +1,4 @@
-package hcl.training.LoanService.model;
+package hcl.training.LoanService.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +30,14 @@ public class ApprovedLoanEntity {
     @JoinColumn(name = "loan_offer_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
     private LoanOfferEntity loanOfferEntity;
+
+	public LoanOfferEntity getLoanOfferEntity() {
+		return loanOfferEntity;
+	}
+
+	public void setLoanOfferEntity(LoanOfferEntity loanOfferEntity) {
+		this.loanOfferEntity = loanOfferEntity;
+	}
 
 	public Long getCustLoanId() {
 		return custLoanId;

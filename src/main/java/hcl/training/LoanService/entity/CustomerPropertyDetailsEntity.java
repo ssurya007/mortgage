@@ -1,4 +1,4 @@
-package hcl.training.LoanService.model;
+package hcl.training.LoanService.entity;
 
 import java.util.Set;
 
@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,9 +26,15 @@ public class CustomerPropertyDetailsEntity {
 	@Column(name = "property_value")
 	Double propertyValue;
 	
-	@OneToMany(mappedBy = "customerPropertyDetailsEntity", cascade=CascadeType.ALL)
-	Set<CustomerDetailsEntity> customerDetailsEntity;
+	@OneToOne(mappedBy = "customerPropertyDetailsEntity", cascade=CascadeType.ALL)
+	CustomerDetailsEntity customerDetailsEntity;
 	
+	public CustomerDetailsEntity getCustomerDetailsEntity() {
+		return customerDetailsEntity;
+	}
+	public void setCustomerDetailsEntity(CustomerDetailsEntity customerDetailsEntity) {
+		this.customerDetailsEntity = customerDetailsEntity;
+	}
 	public Long getPropertyId() {
 		return propertyId;
 	}

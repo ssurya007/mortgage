@@ -8,6 +8,12 @@ public class CustomerPropertyDetails {
 	
 	Double propertyValue;
 	
+	public Double getPropertyValue() {
+		return propertyValue;
+	}
+	public void setPropertyValue(Double propertyValue) {
+		this.propertyValue = propertyValue;
+	}
 	public String getPropertyLocation() {
 		return propertyLocation;
 	}

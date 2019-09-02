@@ -1,4 +1,4 @@
-package hcl.training.LoanService.utils;
+package hcl.training.LoanService.validator;
 
 import javax.validation.Validation;
 import javax.validation.Validator;

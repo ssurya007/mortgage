@@ -23,6 +23,14 @@ public class LoanOffer {
 		return amount;
 	}
 
+	public Double getRateOfInterest() {
+		return rateOfInterest;
+	}
+
+	public void setRateOfInterest(Double rateOfInterest) {
+		this.rateOfInterest = rateOfInterest;
+	}
+
 	public void setAmount(Long amount) {
 		this.amount = amount;
 	}

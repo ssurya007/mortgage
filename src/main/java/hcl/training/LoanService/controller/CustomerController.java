@@ -1,5 +1,6 @@
 package hcl.training.LoanService.controller;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -15,10 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import hcl.training.LoanService.dto.CustomerDetails;
-import hcl.training.LoanService.model.CustomerDetailsEntity;
-import hcl.training.LoanService.model.UpdateStatus;
+import hcl.training.LoanService.dto.LoanOffer;
+import hcl.training.LoanService.entity.CustomerDetailsEntity;
+import hcl.training.LoanService.entity.LoanOfferEntity;
+import hcl.training.LoanService.entity.UpdateStatus;
+import hcl.training.LoanService.response.RegisterResponse;
 import hcl.training.LoanService.service.CustomerService;
-import hcl.training.LoanService.service.CustomerServiceImpl;
+import hcl.training.LoanService.service.impl.CustomerServiceImpl;
 
 @RestController("/customer")
 public class CustomerController {
@@ -28,15 +32,8 @@ public class CustomerController {
 	public static Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
 	@PostMapping("/register")
-	public ResponseEntity<UpdateStatus> registerCustomer(@RequestBody CustomerDetails customerDetails) {
-		Optional<Set<ConstraintViolation<CustomerDetails>>> registerReponse = customerService.registerCustomer(customerDetails);
-		UpdateStatus status = new UpdateStatus();
-		status.setStatus("success");
-		ResponseEntity<UpdateStatus> responseEntity = new ResponseEntity<UpdateStatus> (status, HttpStatus.OK);
-		if(registerReponse.isPresent()) {
-			status.setStatus(registerReponse.get().toString());
-		}
-		return responseEntity;
+	public RegisterResponse registerCustomer(@RequestBody CustomerDetails customerDetails) {
+		return customerService.registerCustomer(customerDetails);
 	}
 
 }

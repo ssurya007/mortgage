@@ -10,9 +10,13 @@ public class CustomerUtil {
 	}
 	
 	public static boolean isAgeValid(LocalDate dateOfBirth) {
-		int age = Period.between(LocalDate.now(), dateOfBirth).getYears();
+		int age = Period.between(dateOfBirth, LocalDate.now()).getYears();
 		return (age <= 60 && age >= 20);
 		
+	}
+	
+	public static Double getEligibleLoanAmount (Double propertyValue) {
+		return propertyValue * 0.8;
 	}
 
 }
