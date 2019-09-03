@@ -2,7 +2,6 @@ package hcl.training.LoanService.service;
 
 import org.springframework.stereotype.Service;
 
-import hcl.training.LoanService.dto.ApprovedLoan;
 import hcl.training.LoanService.response.SearchResponse;
 
 @Service

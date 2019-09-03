@@ -1,11 +1,7 @@
 package hcl.training.LoanService.response;
 
-import java.util.HashMap;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-
-import hcl.training.LoanService.dto.CustomerDetails;
 import hcl.training.LoanService.dto.LoanOffer;
 
 public class RegisterResponse {

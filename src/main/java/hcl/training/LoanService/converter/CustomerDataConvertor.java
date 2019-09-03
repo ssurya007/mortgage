@@ -1,13 +1,16 @@
 package hcl.training.LoanService.converter;
 
-import org.springframework.stereotype.Component;
-
 import hcl.training.LoanService.dto.CustomerDetails;
 import hcl.training.LoanService.entity.CustomerDetailsEntity;
 import hcl.training.LoanService.entity.CustomerPropertyDetailsEntity;
 
 
 public class CustomerDataConvertor {
+	private CustomerDataConvertor() {
+		/**
+		 * to hide implicit constructor
+		 */
+	}
 	public static CustomerDetailsEntity getCustomerDetailsEntity(CustomerDetails customerDetails) {
 		CustomerDetailsEntity entity = new CustomerDetailsEntity();
 		entity.setDateOfBirth(customerDetails.getDateOfBirth());

@@ -1,27 +1,19 @@
 package hcl.training.LoanService.service.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hcl.training.LoanService.converter.ApprovedLoanConvertor;
-import hcl.training.LoanService.converter.CustomerDataConvertor;
 import hcl.training.LoanService.dao.CustomerDAO;
 import hcl.training.LoanService.dao.LoanDAO;
 import hcl.training.LoanService.dao.LoanOfferDAO;
-import hcl.training.LoanService.dto.ApprovedLoan;
-import hcl.training.LoanService.dto.CustomerDetails;
-import hcl.training.LoanService.dto.LoanOffer;
 import hcl.training.LoanService.entity.ApprovedLoanEntity;
 import hcl.training.LoanService.entity.CustomerDetailsEntity;
 import hcl.training.LoanService.entity.LoanOfferEntity;
 import hcl.training.LoanService.response.SearchResponse;
 import hcl.training.LoanService.service.LoanService;
-import hcl.training.LoanService.utils.CustomerUtil;
 
 @Service
 public class LoanServiceImpl implements LoanService {
@@ -35,7 +27,7 @@ public class LoanServiceImpl implements LoanService {
 	@Autowired
 	LoanOfferDAO loanOfferDAO;
 	
-	public static Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
+	public static final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
 	@Override
 	public SearchResponse applyLoan(Long userId, Long loanId) {

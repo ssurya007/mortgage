@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hcl.training.LoanService.dto.ApprovedLoan;
 import hcl.training.LoanService.response.SearchResponse;
 import hcl.training.LoanService.service.SearchService;
 

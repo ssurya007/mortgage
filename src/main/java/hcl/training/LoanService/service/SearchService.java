@@ -1,6 +1,5 @@
 package hcl.training.LoanService.service;
 
-import hcl.training.LoanService.dto.ApprovedLoan;
 import hcl.training.LoanService.response.SearchResponse;
 
 public interface SearchService {

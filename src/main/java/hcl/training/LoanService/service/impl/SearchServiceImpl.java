@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import hcl.training.LoanService.converter.ApprovedLoanConvertor;
 import hcl.training.LoanService.dao.CustomerDAO;
 import hcl.training.LoanService.dao.SearchDAO;
-import hcl.training.LoanService.dto.ApprovedLoan;
 import hcl.training.LoanService.entity.ApprovedLoanEntity;
 import hcl.training.LoanService.entity.CustomerDetailsEntity;
 import hcl.training.LoanService.response.SearchResponse;
@@ -23,11 +22,11 @@ public class SearchServiceImpl implements SearchService {
 	@Autowired
 	CustomerDAO customerDao;
 	
-	public static Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
+	public static final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
 	@Override
 	public SearchResponse searchByMobile(String mobileNo) {
-		ApprovedLoan approvedLoan = null;
+		
 		SearchResponse searchResponse = new SearchResponse();
 		logger.info("fetching customer details");
 		CustomerDetailsEntity customerDetailsEntity = customerDao.findByMobileNumber(mobileNo);
